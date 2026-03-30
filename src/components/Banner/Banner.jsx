@@ -4,7 +4,7 @@ import bannerImg from '../../assets/banner.png';
 
 const Banner = () => {
     return (
-        <div className='flex items-center justify-around container mx-auto gap-12 mt-20'>
+        <div className='flex flex-col lg:flex-row items-center justify-around container mx-auto gap-12 lg:mt-20 mt-4 p-2'>
             {/* left side content */}
             <div className='space-y-5'>
                 {/* Badge */}
@@ -15,9 +15,9 @@ const Banner = () => {
                     </span>
                     <p className='text-violet-600 font-medium text-md'>New: AI-Powered Tools Available</p>
                 </div>
-                <h1 className='text-7xl font-extrabold'>Supercharge Your <br />Digital Workflow</h1>
-                <p className='text-lg text-black/60'>Access premium AI tools, design assets, templates, and productivity software <br />all in one place. Start creating faster today.</p>
-                <div className='flex items-center gap-4'>
+                <h1 className='text-4xl lg:text-7xl font-extrabold'>Supercharge Your<br />Digital Workflow</h1>
+                <p className='lg:text-lg text-black/60'>Access premium AI tools, design assets, templates, and productivity software <br />all in one place. Start creating faster today.</p>
+                <div className='flex items-center lg:gap-4 gap-3'>
                     <button className='bg-violet-600 hover:bg-violet-700 text-white font-semibold py-3 px-6 rounded-full transition-colors duration-200'>
                         Explore Products
                     </button>
