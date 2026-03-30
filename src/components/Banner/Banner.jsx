@@ -28,7 +28,7 @@ const Banner = () => {
                 </div>
             </div>
             {/* right side content */}
-            <div>
+            <div className='animate-pulse'>
                 <img src={bannerImg} alt="" />
             </div>
         </div>
