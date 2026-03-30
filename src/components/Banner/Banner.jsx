@@ -16,7 +16,7 @@ const Banner = () => {
                     <p className='text-violet-600 font-medium text-md'>New: AI-Powered Tools Available</p>
                 </div>
                 <h1 className='text-4xl lg:text-7xl font-extrabold'>Supercharge Your<br />Digital Workflow</h1>
-                <p className='lg:text-lg text-black/60'>Access premium AI tools, design assets, templates, and productivity software <br />all in one place. Start creating faster today.</p>
+                <p className='lg:text-lg text-black/60'>Access premium AI tools, design assets, templates, and productivity software <br className='hidden lg:block' />all in one place. Start creating faster today.</p>
                 <div className='flex items-center lg:gap-4 gap-3'>
                     <button className='bg-violet-600 hover:bg-violet-700 text-white font-semibold py-3 px-6 rounded-full transition-colors duration-200'>
                         Explore Products
