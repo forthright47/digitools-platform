@@ -3,7 +3,7 @@ import React from 'react';
 
 const Navbar = () => {
     return (
-        <div className='navbar shadow-sm items-center lg:px-25 py-2'>
+        <div className='navbar sticky top-0 z-100 bg-white shadow-sm items-center lg:px-25 py-3'>
             <div className='navbar-start'>
                 <h2 className='lg:text-4xl text-3xl font-bold bg-linear-to-br from-violet-800 to-violet-500 bg-clip-text text-transparent py-2'>DigiTools</h2>
             </div>
