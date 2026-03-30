@@ -29,7 +29,7 @@ const Navbar = () => {
             <div className='navbar-end flex items-center gap-5'>
                 <ShoppingCart />
                 <p className='font-medium'>Login</p>
-                <button className='bg-linear-to-r from-violet-800 to-violet-500 text-white font-medium py-3 px-5 rounded-full'>Get Started</button>
+                <button className='bg-linear-to-r from-violet-800 to-violet-500 text-white font-semibold py-3 px-5 rounded-full'>Get Started</button>
             </div>
         </div>
     );
