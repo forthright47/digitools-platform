@@ -74,7 +74,7 @@ const Tools = ({ toolsPromise }) => {
             {activeTab === 'products' ? (
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10'>
                     {tools.map((tool, index) => (
-                        <ToolsCard key={index} tool={tool} tagStyles={tagStyles} periodLabel={periodLabel} onAddToCart={handleAddToCart} />
+                        <ToolsCard key={index} tool={tool} tagStyles={tagStyles} periodLabel={periodLabel} onAddToCart={handleAddToCart} isAdded={cartItems.some(item => item.id === tool.id)} />
                     ))}
                 </div>
             ) : (

@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Check } from 'lucide-react';
 
-const ToolsCard = ({ tool, tagStyles, periodLabel, onAddToCart }) => {
-
-    const [isPurchased, setIsPurchased] = useState(false);
+const ToolsCard = ({ tool, tagStyles, periodLabel, onAddToCart, isAdded }) => {
 
     const handlePurchasing = () => {
-        setIsPurchased(true);
         onAddToCart(tool);
     }
 
@@ -42,8 +39,8 @@ const ToolsCard = ({ tool, tagStyles, periodLabel, onAddToCart }) => {
 
             <button
                 onClick={handlePurchasing}
-                className={`w-full transition-all duration-200 cursor-pointer text-white font-semibold py-3 rounded-full mt-auto flex items-center justify-center gap-2 ${isPurchased ? 'bg-green-500' : 'bg-violet-600 hover:brightness-90'}`}>
-                {isPurchased ? (
+                className={`w-full transition-all duration-200 cursor-pointer text-white font-semibold py-3 rounded-full mt-auto flex items-center justify-center gap-2 ${isAdded ? 'bg-green-500' : 'bg-violet-600 hover:brightness-90'}`}>
+                {isAdded ? (
                     <>
                         <Check size={16} />
                         Added to Cart
