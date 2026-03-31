@@ -33,6 +33,7 @@ const Tools = ({ toolsPromise }) => {
 
     const handleRemoveFromCart = (id) => {
         setCartItems(cartItems.filter(item => item.id !== id));
+        toast.success('Removed from Cart!');
     };
 
     return (
