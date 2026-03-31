@@ -1,5 +1,6 @@
 import './App.css'
 import Banner from './components/Banner/Banner'
+import Features from './components/Features/Features'
 import Navbar from './components/Navbar/Navbar'
 import Pricing from './components/Pricing/Pricing'
 import Stats from './components/Stats/Stats'
@@ -24,6 +25,7 @@ function App() {
       <Tools toolsPromise={toolsPromise}/>
       <Steps />
       <Pricing />
+      <Features />
     </>
   )
 }
