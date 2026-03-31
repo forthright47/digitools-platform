@@ -1,14 +1,19 @@
 import React from 'react';
+import { ShoppingCart } from 'lucide-react';
 
 const Cart = ({ cartItems, onRemove }) => {
 
     const total = cartItems.reduce((sum, item) => sum + item.price, 0);
 
     return (
-        <div className='mt-10 mb-5 border border-gray-200 rounded-2xl p-6 shadow-sm'>
+        <div className='mt-10 mb-5 lg:mb-8 border border-gray-200 rounded-2xl p-6 shadow-sm'>
             <h2 className='text-xl font-bold mb-4'>Your Cart</h2>
             {cartItems.length === 0 ? (
-                <p className='text-center text-black/60 py-10'>Your cart is empty.</p>
+                <div className='flex flex-col items-center justify-center py-16 gap-4'>
+                    <ShoppingCart size={64} className='text-gray-300' />
+                    <h3 className='text-xl font-bold text-black/60'>Your Cart is Empty!</h3>
+                    <p className='text-sm text-black/40'>Looks like you haven't added anything yet. Go explore our premium tools!</p>
+                </div>
             ) : (
                 <div>
                     {cartItems.map((item, index) => (
