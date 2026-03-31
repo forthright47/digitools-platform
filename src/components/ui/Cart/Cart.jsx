@@ -15,10 +15,10 @@ const Cart = ({ cartItems, onRemove }) => {
                         <div key={index} className='flex items-center justify-between bg-gray-50 rounded-2xl px-4 py-4 mb-4'>
                             <div className='flex items-center gap-4'>
                                 <div className='bg-white p-3 rounded-full border border-gray-200 w-fit'>
-                                    <img src={item.icon} alt={item.name} className='' />
+                                    <img src={item.icon} alt={item.name} />
                                 </div>
                                 <div>
-                                    <h3 className='font-bold'>{item.name}</h3>
+                                    <h3 className='font-bold text-sm lg:text-lg'>{item.name}</h3>
                                     <p className='text-sm text-black/60'>${item.price}</p>
                                 </div>
                             </div>
