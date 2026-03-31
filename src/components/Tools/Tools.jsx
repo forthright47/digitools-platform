@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import ToolsCard from '../ui/ToolsCard/ToolsCard';
 
 const tagStyles = {
@@ -15,6 +15,8 @@ const periodLabel = {
 const Tools = ({ toolsPromise }) => {
 
     const tools = use(toolsPromise);
+    const [activeTab, setActiveTab] = useState('products');
+    console.log(activeTab);
 
     return (
         <div className='mt-25 container mx-auto px-6 lg:px-0'>
@@ -26,11 +28,34 @@ const Tools = ({ toolsPromise }) => {
                     <br className='hidden lg:block' />
                     to boost your productivity and creativity.
                 </p>
+
+                <div className='flex items-center justify-center bg-gray-100 rounded-full p-1 w-fit mx-auto mt-4'>
+                    <button
+                        onClick={() => setActiveTab('products')}
+                        className={`px-6 py-2 rounded-full font-semibold text-sm transition-all duration-200 cursor-pointer ${activeTab === 'products'
+                                ? 'bg-violet-600 text-white'
+                                : 'text-black/60 hover:text-black'
+                            }`}
+                    >
+                        Products
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('cart')}
+                        className={`px-6 py-2 rounded-full font-semibold text-sm transition-all duration-200 cursor-pointer ${activeTab === 'cart'
+                                ? 'bg-violet-600 text-white'
+                                : 'text-black/60 hover:text-black'
+                            }`}
+                    >
+                        Cart (0)
+                    </button>
+                </div>
+
+
             </div>
             {/* Grid cards for tools */}
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12'>
-                {tools.map(tool => (
-                    <ToolsCard tool={tool} tagStyles={tagStyles} periodLabel={periodLabel} />
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10'>
+                {tools.map((tool, index) => (
+                    <ToolsCard key={index} tool={tool} tagStyles={tagStyles} periodLabel={periodLabel} />
                 ))}
             </div>
         </div>
