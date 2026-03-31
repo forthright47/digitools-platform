@@ -1,7 +1,7 @@
 import React from 'react';
 import { ShoppingCart } from 'lucide-react';
 
-const Cart = ({ cartItems, onRemove }) => {
+const Cart = ({ cartItems, onRemove, onClearCart }) => {
 
     const total = cartItems.reduce((sum, item) => sum + item.price, 0);
 
@@ -43,7 +43,7 @@ const Cart = ({ cartItems, onRemove }) => {
                     </div>
 
                     {/* Checkout button */}
-                    <button className='w-full bg-linear-to-r from-violet-800 to-violet-500 text-white font-semibold py-4 rounded-full mt-6 hover:brightness-90 cursor-pointer'>
+                    <button onClick={onClearCart} className='w-full bg-linear-to-r from-violet-800 to-violet-500 text-white font-semibold py-4 rounded-full mt-6 hover:brightness-90 cursor-pointer'>
                         Proceed To Checkout
                     </button>
                 </div>
