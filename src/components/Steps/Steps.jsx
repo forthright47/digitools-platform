@@ -24,7 +24,7 @@ const steps = [
 
 const Steps = () => {
     return (
-        <div className='bg-gray-50 py-20 mt-20'>
+        <div className='bg-gray-50 p-10 lg:py-20 mt-20'>
             <div className='text-center space-y-3 mb-12'>
                 <h2 className='text-4xl font-bold'>Get Started In 3 Steps</h2>
                 <p className='text-sm text-black/50'>Start using premium digital tools in minutes, not hours.</p>
