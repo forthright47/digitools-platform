@@ -23,7 +23,7 @@ const Cart = ({ cartItems, onRemove }) => {
                                 </div>
                             </div>
                             <button
-                                onClick={() => onRemove(index)}
+                                onClick={() => onRemove(item.id)}
                                 className='text-red-500 font-semibold text-sm hover:text-red-700 cursor-pointer'>
                                 Remove
                             </button>

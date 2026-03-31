@@ -31,6 +31,10 @@ const Tools = ({ toolsPromise }) => {
         toast.success('Added to Cart!');
     };
 
+    const handleRemoveFromCart = (id) => {
+        setCartItems(cartItems.filter(item => item.id !== id));
+    };
+
     return (
         <div className='mt-25 container mx-auto px-6 lg:px-0'>
             {/* Header */}
@@ -73,7 +77,7 @@ const Tools = ({ toolsPromise }) => {
                     ))}
                 </div>
             ) : (
-                <Cart cartItems={cartItems} />
+                <Cart cartItems={cartItems} onRemove={handleRemoveFromCart} />
             )}
 
             <ToastContainer position='top-right' autoClose={2000} />
