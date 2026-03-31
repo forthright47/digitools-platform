@@ -1,5 +1,8 @@
 import React, { use, useState } from 'react';
 import ToolsCard from '../ui/ToolsCard/ToolsCard';
+import Cart from '../ui/Cart/Cart';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const tagStyles = {
     'best-seller': 'bg-yellow-100 text-yellow-600',
@@ -16,7 +19,17 @@ const Tools = ({ toolsPromise }) => {
 
     const tools = use(toolsPromise);
     const [activeTab, setActiveTab] = useState('products');
-    console.log(activeTab);
+    const [cartItems, setCartItems] = useState([]);
+
+    const handleAddToCart = (tool) => {
+        const alreadyAdded = cartItems.find(item => item.id === tool.id);
+        if (alreadyAdded) {
+            toast.warn('Already added to Cart!');
+            return;
+        }
+        setCartItems([...cartItems, tool]);
+        toast.success('Added to Cart!');
+    };
 
     return (
         <div className='mt-25 container mx-auto px-6 lg:px-0'>
@@ -33,8 +46,8 @@ const Tools = ({ toolsPromise }) => {
                     <button
                         onClick={() => setActiveTab('products')}
                         className={`px-6 py-2 rounded-full font-semibold text-sm transition-all duration-200 cursor-pointer ${activeTab === 'products'
-                                ? 'bg-violet-600 text-white'
-                                : 'text-black/60 hover:text-black'
+                            ? 'bg-violet-600 text-white'
+                            : 'text-black/60 hover:text-black'
                             }`}
                     >
                         Products
@@ -42,22 +55,28 @@ const Tools = ({ toolsPromise }) => {
                     <button
                         onClick={() => setActiveTab('cart')}
                         className={`px-6 py-2 rounded-full font-semibold text-sm transition-all duration-200 cursor-pointer ${activeTab === 'cart'
-                                ? 'bg-violet-600 text-white'
-                                : 'text-black/60 hover:text-black'
+                            ? 'bg-violet-600 text-white'
+                            : 'text-black/60 hover:text-black'
                             }`}
                     >
-                        Cart (0)
+                        Cart ({cartItems.length})
                     </button>
                 </div>
 
 
             </div>
             {/* Grid cards for tools */}
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10'>
-                {tools.map((tool, index) => (
-                    <ToolsCard key={index} tool={tool} tagStyles={tagStyles} periodLabel={periodLabel} />
-                ))}
-            </div>
+            {activeTab === 'products' ? (
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10'>
+                    {tools.map((tool, index) => (
+                        <ToolsCard key={index} tool={tool} tagStyles={tagStyles} periodLabel={periodLabel} onAddToCart={handleAddToCart} />
+                    ))}
+                </div>
+            ) : (
+                <Cart cartItems={cartItems} />
+            )}
+
+            <ToastContainer position='top-right' autoClose={2000} />
         </div>
     );
 };

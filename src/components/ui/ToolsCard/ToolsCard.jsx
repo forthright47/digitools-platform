@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Check } from 'lucide-react';
 
-const ToolsCard = ({ tool, tagStyles, periodLabel }) => {
+const ToolsCard = ({ tool, tagStyles, periodLabel, onAddToCart }) => {
 
     const [isPurchased, setIsPurchased] = useState(false);
 
     const handlePurchasing = () => {
         setIsPurchased(true);
+        onAddToCart(tool);
     }
 
     return (
