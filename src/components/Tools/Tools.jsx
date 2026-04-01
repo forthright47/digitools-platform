@@ -43,7 +43,6 @@ const Tools = ({ toolsPromise }) => {
 
     return (
         <div className='mt-25 container mx-auto px-6 lg:px-0'>
-            {/* Header */}
             <div className='text-center space-y-3'>
                 <h2 className='text-4xl font-bold'>Premium Digital Tools</h2>
                 <p className='text-sm text-black/60'>
@@ -75,7 +74,6 @@ const Tools = ({ toolsPromise }) => {
 
 
             </div>
-            {/* Grid cards for tools */}
             {activeTab === 'products' ? (
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10'>
                     {tools.map((tool, index) => (
