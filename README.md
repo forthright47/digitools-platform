@@ -1,6 +1,6 @@
 # **DigiTools Platform**
 
-React + Vite Application for Premium Subscription Management
+React + Vite Application for Premium Tools Subscription Management
 
 Live: [https://ai-model-hub-frontend.netlify.app/ ](https://digitools-platform-frontend.netlify.app/)
 
